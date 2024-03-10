@@ -1,0 +1,23 @@
+.contact {
+  width: 300px;
+  border: solid;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info:last-child {
+  margin-bottom: 0;
+}
+
+.icon {
+  margin-right: 10px;
+}
