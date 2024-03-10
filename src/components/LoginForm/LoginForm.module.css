@@ -1,0 +1,27 @@
+.contactForm {
+  border: solid;
+  border-radius: 5px;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.inputField {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.inputField :active,
+.inputField:focus {
+  outline-color: blue;
+}
+
+.errorMessage {
+  font-size: 16px;
+  color: red;
+}
+
+.submitButton {
+  display: block;
+  margin: auto;
+}

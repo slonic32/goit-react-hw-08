@@ -1,26 +1,21 @@
-import { createSelector } from "@reduxjs/toolkit";
-
-export function selectContacts(state) {
-  return state.contacts.items;
-}
+import { selectAuthError, selectAuthLoading } from "./auth/selectors";
+import {
+  selectContactsError,
+  selectContactsLoading,
+} from "./contacts/selectors";
 
 export function selectLoading(state) {
-  return state.contacts.loading;
+  if (selectContactsLoading(state)) {
+    return selectContactsLoading(state);
+  } else {
+    return selectAuthLoading(state);
+  }
 }
 
 export function selectError(state) {
-  return state.contacts.error;
-}
-
-export function selectNameFilter(state) {
-  return state.filters.name;
-}
-
-export const selectFilteredContacts = createSelector(
-  [selectNameFilter, selectContacts],
-  (filter, contacts) => {
-    return contacts.filter((contact) => {
-      return contact.name.toUpperCase().includes(filter.toUpperCase());
-    });
+  if (selectContactsError(state)) {
+    return selectContactsError(state);
+  } else {
+    return selectAuthError(state);
   }
-);
+}
